@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  background-color: rgb(2,2,2,.1);
+}
+
+.container {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.top-nav {
+  background-color: grey;
+}
+
+.clear-float:after,
+.clear-float:before {
+  content: " ";
+  display: block;
+  clear: both;
+}
