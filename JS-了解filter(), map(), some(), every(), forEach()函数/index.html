@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+  <style>
+    .main {
+      margin: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <h1>测试JavaScript中的某些函数</h1>
+    <ul>
+      <li>filter()</li>
+      <li>map()</li>
+      <li>some()</li>
+      <li>every()</li>
+      <li>forEach()</li>
+    </ul>
+    <p>打开控制台查看</p>
+  </div>
+  <script>
+    // filter()
+    console.log("=== test filter() ===");
+    let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let filterArr = arr1.filter(
+      (element, index) => {
+        return element > 4
+      });
+    console.log(filterArr);
+
+    // map()
+    console.log("=== test map() ===");
+    let arr2 = [
+      [1, 2, 3],
+      [4, 10, 20],
+      [5, 1, 30]
+    ];
+    let mapArr = arr2.map(
+      element => {
+        console.log(element);
+        return element.filter(
+          (e) => {
+            console.log(e)
+            return e >= 5
+          }
+        )
+      }
+    )
+    console.log(mapArr);
+
+    // some()
+    console.log("=== test some() ===");
+    let arr3 = ["TOM", "MARY", "JOHNSON"];
+    let someArr = arr3.some(
+      (param, i) => {
+        console.log(i + ": " + param);
+        return param === "MARY";
+      }
+    );
+    console.log(someArr);
+
+    // every()
+    console.log("== test every() ===");
+    let arr4 = [1,2,3,4,5,6];
+    let flag1 = arr4.every(
+      e => {
+        console.log(e);
+        return e <= 4;
+    })
+    console.log("flag1: " + flag1);
+
+    // forEach()
+    console.log("=== test forEach() ===")
+    let arr5 = [
+      [1, 2, 3],
+      [4, 10, 20],
+      [5, 1, 30]
+    ];
+    let forEachArr = arr5.forEach(
+      (element) => {
+        console.log(element.filter(
+          e => {
+            return e < 10;
+          }
+        ))
+      }
+    )
+  </script>
+</body>
+
+</html>
