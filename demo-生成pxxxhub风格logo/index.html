@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Generate font style</title>
+  <style>
+  #show {
+    margin: 10px;
+  }
+  #show .pane {
+    background-color: #000;
+    border-radius: 5px;
+    color: #fff;
+    padding: .5em .5em;
+  }
+  #show .post-pane {
+    background-color: #ff9900;
+    border-radius: 5px;
+    color: #000;
+    margin: .2em;
+    padding: .2em;
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <form name="form1" id="form1" action="#">
+      <p>
+        pre-fix:
+        <input type="text" name="pre" id="pre">
+      </p>
+      <p>
+        post-fix:
+        <input type="text" name="post" id="post">
+      </p>
+      <input type="button" value="submit2" onclick="generate()">
+    </form>
+    <div id="show"></div>
+  </div>
+
+  <script>
+  var show = document.getElementById("show");
+
+  function generate() {
+    var pre = document.form1.pre.value;
+    var post = document.form1.post.value;
+    // 清除原有 child
+    show.innerHTML = "";
+    show.appendChild(changeStyle(pre, post));
+  }
+
+  function changeStyle(pre, post) {
+    var pane = document.createElement("span");
+    pane.setAttribute("class", "pane");
+    pane.innerHTML = pre;
+
+    // 生成后缀
+    var postPane = document.createElement("span");
+    postPane.setAttribute("class", "post-pane");
+    postPane.innerHTML = post;
+
+    pane.appendChild(postPane);
+
+    return pane;
+  }
+  </script>
+</body>
+</html>
