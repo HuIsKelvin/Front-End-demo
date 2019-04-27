@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DdanMu</title>
+  <style>
+    #app {
+      width: 350px;
+      height: 200px;
+      background-color: black;
+    }
+
+    #block {
+      color: red;
+      position: relative;
+      animation: barrage 2s linear 0s;
+    }
+
+    /* 弹幕飞过的动画 */
+    @keyframes barrage {
+      0% {
+        left: 100%;
+        /* transform: translateX(0); */
+      }
+
+      99% {
+        left: 0;
+        /* transform: translateX(-100%); */
+      }
+      100% {
+        /* display: block; */
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div id="block">test</div>
+  </div>
+</body>
+
+</html>
