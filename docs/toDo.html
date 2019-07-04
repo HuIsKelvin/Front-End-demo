@@ -15,17 +15,31 @@
 
         #app .app-title {
             text-transform: capitalize;
+            color: #4397f0;
         }
         
+        #add-to-do {
+            height: 30px;
+            padding: 5px;
+            transition: .5s;
+        }
+        
+        input#add-to-do:hover,
+        input#add-to-do:focus{
+            outline-offset: none;
+            border-color: inherit;
+            box-shadow: 0px 5px 10px #e0e0ee;
+            transform: translateY(-5px);
+        }
+
         #add-to-do,
         ul[id="list"] {
             width: 300px;
         }
 
-        #add-to-do {
-            height: 30px;
-        }
-
+        /* 
+         * style of item list
+         */
         ul[id="list"] {
             text-align: left;
             list-style: none;
@@ -34,13 +48,18 @@
         }
 
         #list li {
-            padding: 5px;
+            padding: 7px;
             margin: 2px 0;
+            border-radius: 5px;
             background-color: #eee;
+            transition: .5s;
         }
 
         #list li:hover {
-            background-color: #e0e0e0;
+            background-color: #4397f0;
+            color: #fff;
+            transform: scale(1.1);
+            /* transform: translateY(-5px); */
         }
 
         #list span[class="del"] {
@@ -69,6 +88,7 @@
 
             // 新增待做事项
             add.onkeydown = function (e) {
+                if(!add.value || add.value.length == 0) return;
                 if (e.keyCode === 13) {
                     removeList();
                     var val = add.value;
